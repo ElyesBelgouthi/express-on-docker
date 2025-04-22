@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Cloner le dépôt') {
             steps {
-                git 'https://github.com/ElyesBelgouthi/express-on-docker.git'
+                git branch: 'main', url: 'https://github.com/ElyesBelgouthi/express-on-docker.git'
             }
         }
         stage('Construire l\'image Docker') {

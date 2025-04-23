@@ -19,7 +19,7 @@ pipeline {
         stage('Pousser l\'image Docker') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'elyesbelgouthi-dockerhub', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub_jenkins', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                         sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
                         sh 'docker push ${DOCKER_IMAGE}'
                     }

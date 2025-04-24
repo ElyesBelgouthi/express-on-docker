@@ -4,6 +4,7 @@ pipeline {
         DOCKER_IMAGE = 'elyesbelgouthi/express-demo-app'
         HELM_RELEASE_NAME = 'express-demo'
         HELM_CHART_PATH = './helm/express-demo-app'
+        HELM_BIN_DIR = '/var/jenkins_home/bin'
     }
     stages {
         stage('Cloner le dépôt') {

@@ -29,19 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('Install Helm') {
-            steps {
-                script {
-                    sh '''
-                    curl -sSfL https://get.helm.sh/helm-v3.17.3-linux-amd64.tar.gz -o helm.tar.gz
-                    tar -zxvf helm.tar.gz
-                    mkdir -p ${HELM_BIN_DIR}
-                    mv linux-amd64/helm ${HELM_BIN_DIR}/helm
-                    chmod +x ${HELM_BIN_DIR}/helm
-                    '''
-                }
-            }
-        }
+        
         stage('Déployer avec Helm') {
             steps {
                 script {
